@@ -1,0 +1,161 @@
+main {
+  padding: 2em 1em;
+  max-width: 1300px;
+  height: auto;
+  margin: 2em auto;
+  background-color: whitesmoke;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+.container6{
+  width: 90%;
+  max-width: 1200px; /* Add a max-width to prevent it from being too wide */
+  height: 200vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  margin: 0 auto;
+  padding-top: 30px;
+  background-color: whitesmoke;
+  border-radius: 10px; /* Adds border radius to buttons */
+}
+
+/* CSS to style the images and hide them initially */
+.image {
+    display: none; /* Hide images initially */
+    margin-top: 20px;
+    border-radius: 10px; /* Adds border radius to buttons */
+   
+}
+button {
+  font-size: 15px;
+  font-family: 'Readex pro', sans-serif;
+  padding: 0.5em 1em;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 1em;
+  border: none;
+  outline: none;
+  background: rgba(230, 228, 192);
+  cursor: pointer;
+  color: rgb(32, 41, 32);
+  font-weight: bold;
+  transition: transform 0.3s ease; /* Add transition for smooth effect */
+  border-radius: 10px; /* Adds border radius to buttons */
+}
+
+button:hover {
+  background: rgba(124, 197, 41, 0.6);
+  color: aliceblue;
+  transform: scale(1.1); /* Slightly enlarge the button on hover */
+}
+
+
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: auto;
+  height: 500px;
+  overflow: auto;
+  background-color: whitesmoke;
+  background-color: whitesmoke;
+  object-fit: cover; /* Ensures the image covers the area while maintaining aspect ratio */
+}
+
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: rgb(234, 57, 13);
+  padding: 10px 0;
+  height: 150px;
+  font-size: 30px;
+}
+
+.modal-content, #caption {  
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: rgb(234, 57, 13);
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+
+
+
+.gallery {
+  column-count: 4; /* Adjust based on desired number of columns */
+  column-gap: 8px;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.gallery-item {
+  break-inside: avoid; /* Prevents column breaks within items */
+  margin-bottom: 8px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease, z-index 0.3s ease;
+  cursor: pointer;
+  border-radius: 10px; /* Adjust the value to control the roundness */
+}
+.gallery-item img:hover {
+  transform: scale(1.05); /* Reduced scale value for a smaller enlargement */
+  z-index: 10;
+  border-radius: 10px; /* Maintain the border-radius on hover */
+}
+
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .gallery {
+      column-count: 2; /* Tablet: 2 columns */
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery {
+      column-count: 1; /* Mobile: 1 column */
+  }
+}

@@ -1,0 +1,210 @@
+<?php
+session_start();
+
+// Ensure the user is an admin
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
+    header("Location: login.php");
+    exit();
+}
+
+// Database connection
+$servername = "localhost";
+$username = "root";
+$password = ""; // Replace with your database password if set
+$dbname = "zoo_website";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Fetch guest payments from the guest_ticket_payments table
+$sql_guests = "SELECT payment_id, guest_name, guest_email, ticket_id, amount, payment_status, payment_date 
+               FROM guest_ticket_payments
+               ORDER BY payment_date DESC";
+$result_guests = $conn->query($sql_guests);
+
+if (!$result_guests) {
+    die("Query failed: " . $conn->error);
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/1st.css">
+    <link rel="stylesheet" href="style/form_table_styles.css"> <!-- Your existing styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Guest Ticket Payments</title>
+    <style>
+       main {
+           padding: 2em 1em;
+           max-width: 1300px;
+           margin: 2em auto;
+           background-color: white;
+           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+           border-radius: 8px;
+           height: auto;
+       }
+
+       h2 {
+           text-align: center;
+           margin-bottom: 20px;
+           color: rgb(234, 57, 13);
+           font-size: 30px;
+       }
+
+       table {
+           width: 100%;
+           border-collapse: collapse;
+           margin-bottom: 20px;
+       }
+
+       table, th, td {
+           border: 1px solid #ddd;
+       }
+
+       table th {
+           background-color: whitesmoke;
+           color: rgb(234, 57, 13);
+           text-align: center;
+       }
+
+       th, td {
+           padding: 12px;
+           text-align: left;
+       }
+
+       .no-users {
+           text-align: center;
+           padding :20px;
+           font-size: 18px;
+           color:#333;
+           font-weight: bold;
+       }
+
+       .go-back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            background-color: rgb(234, 57, 13);
+            color:white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .go-back-button:hover {
+            background-color: whitesmoke;
+            border: 2px solid rgb(234, 57, 13);
+            color: rgb(234, 57, 13);
+            transform: scale(1.1);
+        }
+   </style>
+</head>
+
+<?php
+// Get the current page name for active navbar highlighting
+$current_page = basename($_SERVER['PHP_SELF']);
+?>
+
+<body style="background-color:white;">
+    <div class="container">
+        <nav class="dropdownmenu">
+            <div class="logo">
+                <img src="logo.png" alt="Logo"> <!-- Adjust path if needed -->
+            </div>
+            <div class="navbar-links">
+                <ul>
+                    <li><a href="admin_dashboard.php" class="nav-btn <?php echo $current_page == 'admin_dashboard.php' ? 'active' : ''; ?>">Home</a></li>
+                    <li><a href="manage_events.php" class="nav-btn <?php echo $current_page == 'manage_events.php' ? 'active' : ''; ?>">Events</a></li>
+                    <li><a href="manage_bookings.php" class="nav-btn <?php echo $current_page == 'manage_bookings.php' ? 'active' : ''; ?>">Bookings</a></li>
+                    <li><a href="manage_users.php" class="nav-btn <?php echo $current_page == 'manage_users.php' ? 'active' : ''; ?>">Users</a></li>
+                    <li><a href="view_guest_payments.php" class="nav-btn <?php echo $current_page == 'view_guest_payments.php' ? 'active' : ''; ?>">Tickets</a></li>
+                    <li><a href="reports.php" class="nav-btn <?php echo $current_page == 'reports.php' ? 'active' : ''; ?>">Reports</a></li>
+                    <li><a href="logout.php" class="nav-btn logout-btn">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+<main>
+    <!-- Go Back Button -->
+    <a href="view_ticket_payments.php" class="go-back-button">Go Back</a>
+    
+    <h2>Guest Ticket Payments</h2>
+
+    <table class="events-table" style="width: 100%; margin-bottom: 20px;">
+        <thead>
+            <tr>
+                <th>Payment ID</th>
+                <th>Guest Name</th>
+                <th>Guest Email</th>
+                <th>Ticket ID</th>
+                <th>Amount Paid</th>
+                <th>Payment Status</th>
+                <th>Payment Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php 
+            // Loop through and display guest payments
+            if ($result_guests->num_rows > 0): 
+                while($row = $result_guests->fetch_assoc()): ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($row['payment_id']); ?></td>
+                        <td><?php echo htmlspecialchars($row['guest_name']); ?></td>
+                        <td><?php echo htmlspecialchars($row['guest_email']); ?></td>
+                        <td><?php echo htmlspecialchars($row['ticket_id']); ?></td>
+                        <td>$<?php echo htmlspecialchars($row['amount']); ?></td>
+                        <td><?php echo htmlspecialchars($row['payment_status']); ?></td>
+                        <td><?php echo htmlspecialchars($row['payment_date']); ?></td>
+                    </tr>
+                <?php endwhile; 
+            else: ?>
+                <tr>
+                    <td colspan="7" class="no-users">No guest ticket payments found.</td>
+                </tr>
+            <?php endif; ?>
+        </tbody>
+    </table>
+</main>
+
+<footer>
+    <div class="footerContainer">
+        <div class="socialIcons">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-google-plus"></i></a>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <div class="footerNav">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">News</a></li>
+                <li><a href="">About Us</a></li>
+                <li><a href="">Contact Us</a></li>
+                <li><a href="">Our Team</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footerBottom">
+        <p>copyright &copy;2022 Designed by <span class="designer">Faheem</span></p>
+    </div>
+</footer>
+</div>
+</body>
+</html>
+
+<?php
+// Close the database connection
+$conn->close();
+?>

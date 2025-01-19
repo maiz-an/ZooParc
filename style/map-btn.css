@@ -1,0 +1,74 @@
+
+.floating-map {
+    position: fixed;
+    top: 120px; /* Adjust this value to set how far from the top you want it */
+    right: -10px;
+    text-align: center;
+    z-index: 1000;
+    animation: float 3s ease-in-out infinite;
+}
+
+.map-btn {
+    background-color: #e8deb5;
+    color: rgb(131, 115, 115);
+    padding: 1em;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1em;
+    box-shadow: 0 1px 3px #c49898;
+    transition: background-color 0.3s, transform 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+    position: relative;
+}
+
+.map-btn:hover {
+    background-color: #883f23;
+    transform: scale(1.1) rotate(10deg);
+}
+
+.map-btn img {
+    width: 80px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.map-btn:hover img {
+    transform: scale(1.2);
+}
+
+.map-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50%;
+    font-size: 0.8em;
+    animation: bounce 0.5s ease-in-out infinite;
+}
+
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}

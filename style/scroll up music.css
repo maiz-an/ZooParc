@@ -1,0 +1,75 @@
+
+
+/* Floating Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 115px;
+    right: 30px;
+    z-index: 1000;
+}
+
+.scroll-btn {
+    background-color: #fffcf0;
+    color: rgb(255, 0, 0);
+    padding: 1em;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1em;
+    box-shadow: 0 1px 3px #c49898;
+    transition: background-color 0.3s, transform 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15px;
+    height: 15px;
+    text-decoration: none; 
+}
+
+.scroll-btn:hover {
+    background-color: #cdeec3; 
+    transform: scale(1.05);
+}
+
+.scroll-btn i {
+    vertical-align: middle;
+}
+
+/* Updated audio button.css */
+#audio-control {
+    position: fixed;
+    bottom: 40px;
+    left: 20px;
+    z-index: 9999;
+    background-color: #fffcf0; 
+    padding: 10px;
+    border-radius: 50%;
+    color: rgb(255, 0, 0);
+    box-shadow: 0 2px 4px #444;
+    transition: background-color 0.3s, transform 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+}
+
+#audio-control button {
+    
+    color: #210447; 
+    border: none;
+    padding: 1em;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 25px;
+    background-color: #fffcf0;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 2px 4px #444;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+}
+

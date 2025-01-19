@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoo Parc</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Link to New CSS -->
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/Gallery.css">
+    <link rel="stylesheet" href="style/scroll up music.css">
+    <link rel="stylesheet" href="style/ticket-btn.css">
+    <link rel="stylesheet" href="style/map-btn.css">
+    <link rel="stylesheet" href="style/loader.css">
+    <script src="js/loader.js" defer></script>
+    <script src="js/audio.js" defer></script>
+    <script src="js/upbtn.js" defer></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const galleryItems = document.querySelectorAll('.gallery-item img');
+            const buttons = document.querySelectorAll('button'); // Select all buttons
+            const navbar = document.querySelector('.dropdownmenu'); // Select the navbar
+
+            // Set dynamic spans based on image dimensions if needed
+            galleryItems.forEach(img => {
+                img.onload = () => {
+                    const width = img.naturalWidth;
+                    const height = img.naturalHeight;
+
+                    if (width > height * 1.5) { // Wider
+                        img.parentElement.classList.add('wide');
+                    } else if (height > width * 1.5) { // Taller
+                        img.parentElement.classList.add('tall');
+                    } else if (width > 1000 && height > 1000) { // Large
+                        img.parentElement.classList.add('large');
+                    }
+                };
+            });
+
+            // Add click event listeners to each button to toggle navbar visibility
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Display the associated image
+                    const imageId = button.id.replace('show', '') + 'Image';
+                    const image = document.getElementById(imageId);
+
+                    // Hide all images first
+                    document.querySelectorAll('.image').forEach(img => {
+                        img.style.display = 'none';
+                    });
+
+                    // Display the clicked image
+                    if (image) {
+                        image.style.display = 'block';
+                    }
+
+                    // Hide the navbar when an image is displayed
+                    navbar.classList.add('hidden-navbar');
+                });
+            });
+
+            // Add event listener to modal close button to show the navbar again
+            const modalClose = document.querySelector('.close');
+            if (modalClose) {
+                modalClose.addEventListener('click', () => {
+                    navbar.classList.remove('hidden-navbar');
+                });
+            }
+        });
+    </script>
+
+  <style>
+      /* Import desired fonts from Google Fonts */
+      @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Bree+Serif&family=Lobster&display=swap');
+  
+      @keyframes blink {
+          0% {
+              opacity: 1;
+          }
+          50% {
+              opacity: 0;
+          }
+          100% {
+              opacity: 1;
+          }
+      }
+  
+      h1 {
+          font-size: 70px !important; /* Force the font size to apply */
+          color: #ffcc00;
+          text-align: center; 
+          font-family: 'Pacifico', 'Lobster', 'Bree Serif', 'Arial', sans-serif; /* Multiple fonts for fallback */
+          margin-top: 1px;
+          padding: 1px; 
+          border-radius: 1px; 
+          display: inline-block; 
+          text-shadow: 
+              0 0 1px #000000, 
+              0 0 10px #fffef9, 
+              0 0 20px #ECDFCC, 
+              0 0 30px #ffffff, 
+              0 0 40px #ECDFCC, 
+              0 0 50px #ffffff;
+          animation: blink 0.09s infinite; /* Adjusted animation for a smoother effect */
+      }
+      /* Add this CSS to hide the navbar */
+      .hidden-navbar .navbar-links {
+            display: none;
+        }
+        /* Modal styles */
+        .container6{
+  width: 90%;
+  max-width: 1200px; /* Add a max-width to prevent it from being too wide */
+  height: 249vh;
+  max-height: 255vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  margin: 0 auto;
+  padding-top: 30px;
+  background-color: whitesmoke;
+  border-radius: 10px; /* Adds border radius to buttons */
+}
+
+/* CSS to style the images and hide them initially */
+.image {
+    display: none; /* Hide images initially */
+    margin-top: 20px;
+    border-radius: 10px; /* Adds border radius to buttons */
+   
+}
+
+.modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: white; /* Fallback color */
+            background-color: white; /* Black w/ opacity */
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 1200px;
+            border-radius: 15px; /* Rounded corners for modal */
+        }
+
+        .modal-content:hover {
+            cursor: zoom-in;
+        }
+  </style>
+  
+
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+                <a href="index.html" class="logo">
+                    <img src="img/logo.png" alt="Zoo Parc Logo">
+                </a>
+                <div class="title-nav">
+                    <h1>Zoo Parc
+                    </h1>
+                    <nav>
+                        <ul>
+                        <li><a href="index.html">Home</a></li>   
+                        <li><a href="AboutUs.html">About Us</a></li>
+                        <li><a href="Events.html">Events</a></li>
+                        <li>
+                            <div class="nav-item home-item">
+                                <a href="Gallery.html" class="home-button"style="color: #ffcc00;">Gallery</a>
+                                <div class="animal-animation">
+                                    <img src="img/lion.gif" class="animal" alt="lion Animation">
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="FoodOutlets.html">Dining</a></li>
+                        <li><a href="Login.html">Login</a></li>
+                        </ul>
+                    </nav>
+                </div>
+        </div>
+    </header>
+<div
+ id="loader">
+    <img src="img/logo.png" alt="Zoo Parc Logo">
+    <p>Loading, please wait...</p>
+</div>
+
+<main style="height: 1840px;">
+    <h2>Our Gallery</h2>
+    <div class="container6">
+      
+        <button id="showDolphinButton">DOLPHIN</button>
+        <button id="showGiantPandaButton">GIANT PANDA</button>
+        <button id="showAsianElephantButton">ASIAN ELEPHANT</button>
+        <button id="showWildDeerButton">WILD DEER</button>
+        <button id="showGiraffeButton">GIRAFFE</button>
+        <button id="showZebraButton">ZEBRA</button>
+        <button id="showHorseButton">HORSE</button>
+        <button id="showKangarooButton">KANGAROO</button>
+        <button id="showLionButton">LION</button>
+        <button id="showTigerButton">TIGER</button>
+        <button id="showBearButton">BEAR</button>
+        <button id="showWolfButton">WOLF</button>
+        <button id="showCheetahButton">CHEETAH</button>
+        <button id="showRhinocerosButton">RHINOCEROS</button>
+        <button id="showHippopotamusButton">HIPPOPOTAMUS</button>
+        <button id="showCapybaraButton">CAPYBARA</button>
+        <button id="showSlothButton">SLOTH</button>
+        <button id="showKoalaButton">KOALA</button>
+        <button id="showSugarGlinderButton">SUGAR GLINDER</button>
+        <button id="showChimpanzeeButton">CHIMPANZEE</button>
+        <button id="showOrangutanButton">ORANGUTAN</button>
+        <button id="showGorillaButton">GORILLA</button>
+        <button id="showTurtleButton">TURTLE</button>
+        <button id="showPorcupineButton">PORCUPINE</button>
+        <button id="showPoisonousFrogButton">POISONOUS FROG</button>
+        <button id="showIguanaButton">IGUANA</button>
+        <button id="showCrocodileButton">CROCODILE</button>
+        <button id="showPythonButton">PYTHON</button>
+        <button id="showSnakeButton">SNAKE</button>
+        <button id="showFlamingoButton">FLAMINGO</button>
+        <button id="showOstrichButton">OSTRICH</button>
+        <button id="showPeacockButton">PEACOCK</button>
+        <button id="showSwanButton">SWAN</button>
+        <button id="showBoldEagleButton">BOLD EAGLE</button>
+        <button id="showParrotButton">PARROT</button>
+        <button id="showMacowButton">MACOW</button>
+        <button id="showToucanButton">TOUCAN</button>
+        <button id="showOwlButton">OWL</button>
+        <button id="showKingfisherButton">KINGFISHER</button>
+        <button id="showTarantulaButton">TARANTULA</button>
+
+        <!-- Modal for displaying images -->
+        <div id="imageModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImage">
+            <div id="caption"></div>
+        </div>
+
+        <!-- Images to be displayed -->
+        <!-- Images to be displayed -->
+        <img id="DolphinImage" src="img/Dolphin1.jpg" alt="Dolphin Image" width="100%" height="80%" class="image">
+        <img id="GiantPandaImage" src="img/giant panda1.jpg" alt="Giant Panda Image" width="100%"height="80%" class="image">
+        <img id="AsianElephantImage" src="img/asian elephant.jpg" alt="Asian Elephant Image" width="100%"height="80%" class="image">
+        <img id="WildDeerImage" src="img/Wild Deer2.jpg" alt="Wild Deer Image" width="300" class="image">
+        <img id="GiraffeImage" src="img/giraff.jpg" alt="Giraffe Image" width="300" class="image">
+        <img id="ZebraImage" src="img/zebra1.jpg" alt="Zebra Image" width="300" class="image">
+        <img id="HorseImage" src="img/horse.jpg" alt="Horse Image" width="300" class="image">
+        <img id="KangarooImage" src="img/kangaroo1.jpg" alt="Kangaroo Image" width="300" class="image">
+        <img id="LionImage" src="img/lion01.jpg" alt="Lion Image" width="300" class="image">
+        <img id="TigerImage" src="img/Tiger2.jpg" alt="Tiger Image" width="300" class="image">
+        <img id="BearImage" src="img/1bear.jpg" alt="Bear Image" width="300" class="image">
+        <img id="WolfImage" src="img/wolf.jpg" alt="Wolf Image" width="300" class="image">
+        <img id="CheetahImage" src="img/cheetah.jpg" alt="Cheetah Image" width="300" class="image">
+        <img id="RhinocerosImage" src="img/rhinoceros.jpg" alt="Rhinoceros Image" width="300" class="image">
+        <img id="HippopotamusImage" src="img/hippopotamus.jpg" alt="Hippopotamus Image" width="300" class="image">
+        <img id="CapybaraImage" src="img/capybara.jpg" alt="Capybara Image" width="300" class="image">
+        <img id="SlothImage" src="img/sloth.jpg" alt="Sloth Image" width="300" class="image">
+        <img id="KoalaImage" src="img/Koala.jpg" alt="Koala Image" width="300" class="image">
+        <img id="SugarGlinderImage" src="img/sugar glinder.jpg" alt="Sugar Glinder Image" width="300" class="image">
+        <img id="ChimpanzeeImage" src="img/chimpanzee.jpg" alt="Chimpanzee Image" width="300" class="image">
+        <img id="OrangutanImage" src="img/orangutan1.jpg" alt="Orangutan Image" width="300" class="image">
+        <img id="GorillaImage" src="img/gorilla.jpg" alt="Gorilla Image" width="300" class="image">
+        <img id="TurtleImage" src="img/turtle.jpg" alt="Turtle Image" width="300" class="image">
+        <img id="PorcupineImage" src="img/porcupine.jpg" alt="Porcupine Image" width="300" class="image">
+        <img id="PoisonousFrogImage" src="img/Poisonous Frog1.jpg" alt="Poisonous Frog Image" width="300" class="image">
+        <img id="IguanaImage" src="img/iguana.jpg" alt="Iguana Image" width="300" class="image">
+        <img id="CrocodileImage" src="img/crocodile.jpg" alt="Crocodile Image" width="300" class="image">
+        <img id="PythonImage" src="img/python.jpg" alt="Python Image" width="300" class="image">
+        <img id="SnakeImage" src="img/snake.jpg" alt="Snake Image" width="300" class="image">
+        <img id="FlamingoImage" src="img/flamingo.jpg" alt="Flamingo Image" width="300" class="image">
+        <img id="OstrichImage" src="img/ostrich.jpg" alt="Ostrich Image" width="300" class="image">
+        <img id="PeacockImage" src="img/peacock.jpg" alt="Peacock Image" width="300" class="image">
+        <img id="SwanImage" src="img/swan.jpg" alt="Swan Image" width="300" class="image">
+        <img id="BoldEagleImage" src="img/bald eagle1.jpg" alt="Bold Eagle Image" width="300" class="image">
+        <img id="ParrotImage" src="img/parrot.jpg" alt="Parrot Image" width="300" class="image">
+        <img id="MacowImage" src="img/macow.jpg" alt="Macow Image" width="300" class="image">
+        <img id="ToucanImage" src="img/toucan.jpg" alt="Toucan Image" width="300" class="image">
+        <img id="OwlImage" src="img/owl.jpg" alt="Owl Image" width="300" class="image">
+        <img id="KingfisherImage" src="img/kingfisher.jpg" alt="Kingfisher Image" width="300" class="image">
+        <img id="TarantulaImage" src="img/tarantula.jpg" alt="Tarantula Image" width="300" class="image">
+
+
+       <!-- Link to the external JavaScript file -->
+       <script src="scripts1.js"></script>
+
+       <div class="gallery">
+           <div class="gallery-item large">
+               <a href="img/Gallery1.jpg">
+                   <img src="img/Gallery1.jpg" alt="image1">
+               </a>
+           </div>
+
+           <div class="gallery-item wide">
+               <a href="img/Gallery.jpg">
+                   <img src="img/Gallery.jpg" alt="image2">
+               </a>
+           </div>
+
+           <div class="gallery-item">
+               <a href="img/Gallery7.jpg">
+                   <img src="img/Gallery7.jpg" alt="image3">
+               </a>
+           </div>
+
+           
+
+           <div class="gallery-item wide">
+               <a href="img/Gallery6.jpg">
+                   <img src="img/Gallery6.jpg" alt="image5">
+               </a>
+           </div>
+
+           <div class="gallery-item">
+               <a href="img/Gallery5.jpg">
+                   <img src="img/Gallery5.jpg" alt="image6">
+               </a>
+           </div>
+           <div class="gallery-item">
+               <a href="img/Gallery9.jpg">
+                   <img src="img/Gallery9.jpg" alt="image6">
+               </a>
+           </div>
+           <div class="gallery-item">
+               <a href="img/Gallery10.jpg">
+                   <img src="img/Gallery10.jpg" alt="image6">
+               </a>
+           </div>
+           <div class="gallery-item">
+               <a href="img/Gallery11.jpg">
+                   <img src="img/Gallery11.jpg" alt="image6">
+               </a>
+           </div>
+           <div class="gallery-item">
+               <a href="img/Gallery12.jpg">
+                   <img src="img/Gallery12.jpg" alt="image6">
+               </a>
+           </div>
+           <div class="gallery-item">
+               <a href="img/Gallery13.jpg">
+                   <img src="img/Gallery13.jpg" alt="image6">
+               </a>
+           </div>
+           <div class="gallery-item">
+               <a href="img/Gallery14.jpg">
+                   <img src="img/Gallery14.jpg" alt="image6">
+               </a>
+           </div>
+           <div class="gallery-item">
+               <a href="img/Gallery15.jpg">
+                   <img src="img/Gallery15.jpg" alt="image6">
+               </a>
+           </div>
+           <div class="gallery-item">
+               <a href="img/Gallery16.jpg">
+                   <img src="img/Gallery16.jpg" alt="image6">
+               </a>
+           </div>
+           <div class="gallery-item">
+               <a href="img/Gallery17.jpg">
+                   <img src="img/Gallery17.jpg" alt="image6">
+               </a>
+           </div>
+           <div class="gallery-item">
+               <a href="img/Gallery18.jpg">
+                   <img src="img/Gallery18.jpg" alt="image6">
+               </a>
+           </div>
+           <div class="gallery-item">
+               <a href="img/Gallery19.jpg">
+                   <img src="img/Gallery19.jpg" alt="image6">
+               </a>
+           </div>
+           <div class="gallery-item">
+               <a href="img/Gallery20.jpg">
+                   <img src="img/Gallery20.jpg" alt="image6">
+               </a>
+           </div>
+           <div class="gallery-item">
+               <a href="img/Gallery21.jpg">
+                   <img src="img/Gallery21.jpg" alt="image6">
+               </a>
+           </div>
+           <div class="gallery-item">
+               <a href="img/Gallery22.jpg">
+                   <img src="img/Gallery22.jpg" alt="image6">
+               </a>
+           </div>
+           <div class="gallery-item">
+               <a href="img/Gallery23.jpg">
+                   <img src="img/Gallery23.jpg" alt="image6">
+               </a>
+           </div>
+           <div class="gallery-item">
+            <a href="img/Gallery24.jpg">
+                <img src="img/Gallery24.jpg" alt="image6">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="img/Gallery25.jpg">
+                <img src="img/Gallery25.jpg" alt="image6">
+            </a>
+        </div>
+        
+       </div>
+   </div>
+</main>
+</body>
+
+
+ <!-- Enhanced Footer -->
+ <footer
+  class="footer">
+    <div class="footer-content">
+        
+        </div>
+        <div class="footer-section links">
+            
+        </div>
+    </div>
+    <br>
+    <div class="footer-bottom">
+      <div class="footer-section about">
+        <div class="social-icons">
+            <p class="footer-head"><i class="fas fa-leaf icon"></i>
+                Zoo Parc - The Zoological Park
+          <i class="fas fa-paw icon"></i> <br></p>
+          <p>Together, we CAN make a difference! If you'd like to help our wildlife charity,
+             there are lots of ways you can do so... THANK YOU for your ongoing SUPPORT.</p>           
+      
+    <p>Zoo Parc is home to over 31,000 animals across 128 acres of lush gardens.
+         Come explore and learn about wildlife and conservation efforts.</p> <br>
+         <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-google-plus"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <p> &copy; 2024 Zoo Parc - The Zoological Park | 
+            Designed by<a href="https://www.instagram.com/luna.layl_/" class="btn-su" 
+            target="_blank" >Sumalka Kodithuwakku<i class="fab fa-pagelines icon-lv" id="icon-lv"></i></a></p>
+        
+            
+
+
+        </div>
+        
+        </div> 
+    </div>
+    <div class="quick-links">
+        <p> Quick - Links  
+          <a href="index.html" class="quick-link-btn">Home</a>|
+          <a href="AboutUs.html" class="quick-link-btn">About Us</a>|
+          <a href="Gallery.html" class="quick-link-btn">Gallery</a>|
+          <a href="registration.php" class="quick-link-btn">Register</a>|
+          <a href="forgot_password.php" class="quick-link-btn">Reset-Password</a> </p>
+      </div>
+            
+</footer>
+
+
+          <!-- Scroll to Top Button -->
+<div class="scroll-to-top" id="scrollToTop">
+  <a href="#top" class="scroll-btn">
+      <i class="fas fa-chevron-up"></i>
+  </a>
+</div>
+      <!-- Floating Audio Control -->
+<div id="audio-control">
+  <button id="musicPlaying">&#9654;</button> <!-- Play Icon -->
+  <audio id="background-music" loop>
+      <source src="images/mp3.mp3" type="audio/mpeg">
+      browser not support the audio
+  </audio>
+</div>
+     <!-- Floating ticket Button -->
+     <div class="floating-cart">
+        <a href="Tickets.html" class="cart-btn">
+            <img src="img/ticket-icon.png" alt="Buy Ticket">
+        </a>
+
+        <!-- Floating Map Button -->
+     <div class="floating-map">
+        <a href="ZooMap.html" class="map-btn">
+            <img src="img/map.gif" alt="Zoo Map">
+        </a>
+
+</html>

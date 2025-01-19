@@ -1,0 +1,168 @@
+
+main {
+    padding: 2em 1em;
+    max-width: 900px;
+    margin: 2em auto;
+    background-color: whitesmoke;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    color: rgb(234, 57, 13);
+    text-align: center;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="file"],
+.form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-container button[type="submit"] {
+    width: 700px;
+    padding: 7px 10px;
+    border-radius: 5px;
+    margin-left: 1px;
+    background-color: rgb(234, 57, 13);
+    color:  white;
+    text-decoration: none;
+    margin: 5px;
+    cursor: pointer;
+    border: 2px solid rgb(234, 57, 13);
+    margin-right: 25px;
+    
+    
+}
+
+.form-container button[type="submit"]:hover {
+    background-color: white;
+    border: 2px solid rgb(234, 57, 13);
+    color: rgb(234, 57, 13);
+    transform: scale(1.1);
+}
+
+.message {
+    padding: 10px;
+    background-color: #e0e0e0;
+    border-left: 5px solid #333;
+    margin-bottom: 20px;
+}
+main {
+    padding: 2em 1em;
+    max-width: 600px;
+    margin: 2em auto;
+    background-color: whitesmoke;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="number"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+input[type="file"] {
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+button {
+    background-color: rgb(234, 57, 13);
+    color: white;
+    text-decoration: none;
+    padding: 0.7em 1.5em;
+    transition: background-color 0.3s, transform 0.3s, color 0.3s;
+    font-weight: bold;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    display: inline-block;
+    border: 3px solid rgb(234, 57, 13);
+}
+button:hover {
+    background-color: whitesmoke;
+    border: 2px solid rgb(234, 57, 13);
+    color: rgb(234, 57, 13);
+    transform: scale(1.1);
+}
+
+/* table-style.css */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1rem;
+    min-width: 600px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+table thead tr {
+    background-color: whitesmoke;
+    color: rgb(234, 57, 13);
+    text-align: left;
+    font-weight: bold;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+table tbody tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: #444 ;
+}
+
+a:hover {
+    text-decoration: underline;
+}

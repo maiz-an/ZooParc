@@ -1,0 +1,255 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+/* Container Styles */
+.container {
+    width: 100%;
+    height: 500vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0 auto;
+}
+
+/* Navigation Bar Styles */
+nav {
+    background-color: whitesmoke;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.logo img {
+    width: 250px;
+    height: 74px;
+    margin-right: 20px;
+    position: relative;
+}
+
+.navbar-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+ul li a {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: whitesmoke;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+ul li a:hover {
+    background-color: #e0e0e0;
+}
+
+ul li:not(:last-child) {
+    margin-right: 10px;
+}
+
+/* Dropdown Menu Styles */
+.dropdownmenu ul, .dropdownmenu li {
+    margin: 0;
+    padding: 0;
+}
+
+.dropdownmenu ul {
+    background: whitesmoke;
+    list-style: none;
+}
+
+.dropdownmenu li {
+    float: left;
+    position: relative;
+}
+
+.dropdownmenu a {
+    display: flex;
+    font-weight: 400;
+    font-size: 0.9rem;
+    font-family: Verdana, sans-serif;
+    padding: 15px 50px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+#submenu {
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 35px;
+    visibility: hidden;
+    z-index: 1;
+    display: block;
+}
+
+li:hover ul#submenu {
+    opacity: 1;
+    top: 80px;
+    visibility: visible;
+}
+
+/* Footer Styles */
+footer {
+    background-color: whitesmoke;
+    width: 100%;
+    padding: 20px 0;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.footerContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.socialIcons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.socialIcons a {
+    text-decoration: none;
+    padding: 10px;
+    background-color: rgba(124, 197, 41, 0.6);
+    margin: 0 10px;
+    border-radius: 50%;
+}
+
+.socialIcons a i {
+    font-size: 2em;
+    color: black;
+    opacity: 0.9;
+}
+
+.socialIcons a:hover {
+    background-color: rgb(234, 57, 13);
+    transition: 0.5s;
+}
+
+.socialIcons a:hover i {
+    color: gray;
+    transition: 0.5s;
+}
+
+.footerNav {
+    margin: 20px 0;
+}
+
+.footerNav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+.footerNav ul li {
+    margin: 0 15px;
+}
+
+.footerNav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 1em;
+    opacity: 0.7;
+    transition: opacity 0.5s;
+}
+
+.footerNav ul li a:hover {
+    opacity: 1;
+}
+
+.footerBottom {
+    background-color: whitesmoke;
+    padding: 20px;
+    text-align: center;
+}
+
+.footerBottom p {
+    color: red;
+    margin: 0;
+}
+
+.designer {
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 5px;
+}
+
+/* Media Queries */
+@media (max-width: 700px) {
+    .footerNav ul {
+        flex-direction: column;
+    }
+
+    .footerNav ul li {
+        margin-bottom: 10px;
+    }
+}
+
+/* Button Styles */
+.nav-btn1 {
+    background-color: rgb(234, 57, 13);
+    color: white;
+    text-decoration: none;
+    padding: 0.7em 1.5em;
+    transition: background-color 0.3s, transform 0.3s, color 0.3s;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+    border: 3px solid rgb(234, 57, 13);
+}
+
+.nav-btn1:hover {
+    background-color: white;
+    border: 3px solid rgb(234, 57, 13);
+    color: rgb(234, 57, 13);
+    transform: scale(1.1);
+}
+
+.nav-btn {
+    background-color: white;
+    color: rgb(234, 57, 13);
+    text-decoration: none;
+    padding: 0.7em 1.5em;
+    transition: background-color 0.3s, transform 0.3s, color 0.3s;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+    border: 3px solid whitesmoke;
+}
+
+.nav-btn:hover {
+    background-color: whitesmoke;
+    border: 2px solid rgb(234, 57, 13);
+    color: rgb(234, 57, 13);
+    transform: scale(1.1);
+}

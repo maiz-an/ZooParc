@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoo Parc</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Sevillana&display=swap" rel="stylesheet"><link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/scroll up music.css">
+    <link rel="stylesheet" href="style/ticket-btn.css">
+    <link rel="stylesheet" href="style/map-btn.css">
+    <link rel="stylesheet" href="style/loader.css">
+    <script src="js/loader.js" defer></script>
+    <script src="js/audio.js" defer></script>
+    <script src="js/upbtn.js" defer></script>
+    
+    <script>document.addEventListener('DOMContentLoaded', function() {
+      let slideIndex = 0;
+      let slides = document.querySelectorAll('.slide');
+      
+      function showSlides() {
+          for (let i = 0; i < slides.length; i++) {
+              slides[i].style.display = 'none';
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) { slideIndex = 1 }
+          slides[slideIndex - 1].style.display = 'block';
+          setTimeout(showSlides, 5000); // Change image every 5 seconds
+      }
+      
+      function plusMainSlides(n) {
+          showSlidesManually(slideIndex += n);
+      }
+      
+      function showSlidesManually(n) {
+          if (n > slides.length) { slideIndex = 1 }
+          if (n < 1) { slideIndex = slides.length }
+          for (let i = 0; i < slides.length; i++) {
+              slides[i].style.display = 'none';
+          }
+          slides[slideIndex - 1].style.display = 'block';
+      }
+      
+      document.querySelector('.prev').addEventListener('click', function() {
+          plusMainSlides(-1);
+      });
+      
+      document.querySelector('.next').addEventListener('click', function() {
+          plusMainSlides(1);
+      });
+      
+      // Initial call to start the slideshow
+      showSlides();
+  });
+  </script>
+
+  <style>
+      /* Import desired fonts from Google Fonts */
+      @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Bree+Serif&family=Lobster&display=swap');
+  
+      @keyframes blink {
+          0% {
+              opacity: 1;
+          }
+          50% {
+              opacity: 0;
+          }
+          100% {
+              opacity: 1;
+          }
+      }
+  
+      h1 {
+          font-size: 70px !important; /* Force the font size to apply */
+          color: #ffcc00;
+          text-align: center; 
+          font-family: 'Pacifico', 'Lobster', 'Bree Serif', 'Arial', sans-serif; /* Multiple fonts for fallback */
+          margin-top: 1px;
+          padding: 1px; 
+          border-radius: 1px; 
+          display: inline-block; 
+          text-shadow: 
+              0 0 1px #000000, 
+              0 0 10px #fffef9, 
+              0 0 20px #ECDFCC, 
+              0 0 30px #ffffff, 
+              0 0 40px #ECDFCC, 
+              0 0 50px #ffffff;
+          animation: blink 0.09s infinite; /* Adjusted animation for a smoother effect */
+      }
+      main{
+        width: 80%;
+      }
+  </style>
+  
+
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+                <a href="index.html" class="logo">
+                    <img src="img/logo.png" alt="Zoo Parc Logo">
+                </a>
+                <div class="title-nav">
+                    <h1>Zoo Parc
+                    </h1>
+                    <nav>
+                        <ul>
+                            
+                        <li>
+                            <div class="nav-item home-item">
+                                <a href="index.html" class="home-button"style="color: #ffcc00;">Home</a>
+                                <div class="animal-animation">
+                                    <img src="img/lion.gif" class="animal" alt="lion Animation">
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="AboutUs.html">About Us</a></li>
+                        <li><a href="Events.html">Events</a></li>
+                        <li><a href="Gallery.html">Gallery</a></li>
+                        <li><a href="FoodOutlets.html">Dining</a></li>
+                        <li><a href="Login.html">Login</a></li>
+                        </ul>
+                    </nav>
+                </div>
+        </div>
+    </header>
+<div id="loader">
+    <img src="img/logo.png" alt="Zoo Parc Logo">
+    <p>Loading, please wait...</p>
+</div>
+<section style="background-color: white;">
+  
+          <!-- Welcome Section -->
+          <section class="welcome-section">
+            <div class="welcome-content">
+                <h2>Welcome to The Zoo Parc - The Zoological Park</h2>
+                <p>Join us for an unforgettable experience where you can meet exotic animals, enjoy educational talks, and participate in conservation efforts!</p>
+                    <!-- Main Content -->
+          <div class="slider main-slider">
+            <div class="slides">
+                <div class="slide">
+                    <img src="img/tiger1.jpg" alt="Slide 1">
+                    <div class="slide-content">
+                        <h2>Welcome to The Zoo Parc</h2>
+                        <a href="registration.php">Join Us</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="img/pic3.jpg" alt="Slide 2">
+                    <div class="slide-content">
+                        <h2>Play with Panda</h2>
+                        <a href="Tickets.html">Book Now</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="img/pic2.jpg" alt="Slide 3">
+                    <div class="slide-content">
+                        <h2>Train An Egle</h2>
+                        <a href="Tickets.html">Book Now</a>
+                    </div>
+                </div>
+                
+            </div>
+            <a class="prev" onclick="plusMainSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusMainSlides(1)">&#10095;</a>
+       
+          </section>
+</section>
+
+<main>
+          <!-- Animal Talks Section -->
+<section class="animal-talks">
+  <div class="section-header">
+      <h2>Animal Talks</h2>
+      <p>Join our zoo rangers to learn more about our amazing plants & animals!</p>
+  </div>
+  <div class="talks-grid">
+      <div class="talk-card">
+          <img src="img/Giraffe Talk.jpg" alt="Giraffe Talk">
+          <h3>Giraffe Talk</h3>
+          <p>Learn about the tallest animal on Earth!</p>
+          <a href="https://www.youtube.com/watch?v=w618jriMW0M" target="_blank" class="btn">Learn More</a>
+      </div>
+      <div class="talk-card">
+          <img src="img/Penguin Talk.jpg" alt="Penguin Talk">
+          <h3>Penguin Parade</h3>
+          <p>See our adorable penguins in action!</p>
+          <a href="https://www.youtube.com/watch?v=WFkWfsUHtJw" target="_blank" class="btn">Learn More</a>
+      </div>
+      
+  </div>
+</section>
+
+<!-- Adopt an Animal Section -->
+<section class="adopt-animal">
+  <div class="section-header">
+      <h2>Adopt an Animal</h2>
+      <p>Help fund the work we do to protect important habitats and the wildlife that relies on them.</p>
+  </div>
+  <div class="adopt-grid">
+      <div class="adopt-card">
+          <img src="img/Adopt a Tiger.jpg" alt="Adopt a Tiger">
+          <h3>Adopt a Tiger</h3>
+          <p>Your support helps us conserve tigers in the wild.</p>
+          <a href="https://www.youtube.com/watch?v=Ixc4RNReHUs" target="_blank" class="btn">See More</a>
+      </div>
+      <div class="adopt-card">
+          <img src="img/Adopt an Elephan.jpeg" alt="Adopt an Elephant">
+          <h3>Adopt an Elephant</h3>
+          <p>Support our efforts to protect these gentle giants.</p>
+          <a href="https://www.youtube.com/watch?v=Tw8dVSM4O4s" target="_blank" class="btn">See More</a>
+      </div>
+      <!-- Add more adoption options -->
+  </div>
+</section>
+
+
+</main>
+
+    
+</body>
+
+ <!-- Enhanced Footer -->
+ <footer
+  class="footer">
+    <div class="footer-content">
+        
+        </div>
+        <div class="footer-section links">
+            
+        </div>
+    </div>
+    <br>
+    <div class="footer-bottom">
+      <div class="footer-section about">
+        <div class="social-icons">
+            <p class="footer-head"><i class="fas fa-leaf icon"></i>
+                Zoo Parc - The Zoological Park
+          <i class="fas fa-paw icon"></i> <br></p>
+          <p>Together, we CAN make a difference! If you'd like to help our wildlife charity,
+             there are lots of ways you can do so... THANK YOU for your ongoing SUPPORT.</p>           
+      
+    <p>Zoo Parc is home to over 31,000 animals across 128 acres of lush gardens.
+         Come explore and learn about wildlife and conservation efforts.</p> <br>
+         <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-google-plus"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <p> &copy; 2024 Zoo Parc - The Zoological Park | 
+            Designed by<a href="https://www.instagram.com/luna.layl_/" class="btn-su" 
+            target="_blank" >Sumalka Kodithuwakku<i class="fab fa-pagelines icon-lv" id="icon-lv"></i></a></p>
+        
+            
+
+
+        </div>
+        
+        </div> 
+    </div>
+    <div class="quick-links">
+        <p> Quick - Links  
+          <a href="index.html" class="quick-link-btn">Home</a>|
+          <a href="AboutUs.html" class="quick-link-btn">About Us</a>|
+          <a href="Gallery.html" class="quick-link-btn">Gallery</a>|
+          <a href="registration.php" class="quick-link-btn">Register</a>|
+          <a href="forgot_password.php" class="quick-link-btn">Reset-Password</a> </p>
+      </div>
+            
+</footer>
+
+          <!-- Scroll to Top Button -->
+<div class="scroll-to-top" id="scrollToTop">
+  <a href="#top" class="scroll-btn">
+      <i class="fas fa-chevron-up"></i>
+  </a>
+</div>
+      <!-- Floating Audio Control -->
+<div id="audio-control">
+  <button id="musicPlaying">&#9654;</button> <!-- Play Icon -->
+  <audio id="background-music" loop>
+      <source src="images/mp3.mp3" type="audio/mpeg">
+      browser not support the audio
+  </audio>
+</div>
+     <!-- Floating ticket Button -->
+     <div class="floating-cart">
+        <a href="Tickets.html" class="cart-btn">
+            <img src="img/ticket-icon.png" alt="Buy Ticket">
+        </a>
+
+        <!-- Floating Map Button -->
+     <div class="floating-map">
+        <a href="ZooMap.html" class="map-btn">
+            <img src="img/map.gif" alt="Zoo Map">
+        </a>
+
+</html>

@@ -1,0 +1,133 @@
+main {
+    padding: 2em 1em;
+    max-width: 1300px;
+    margin: 2em auto;
+    background-color: whitesmoke;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(234, 57, 13);
+    font-size: 30px;
+}
+
+.events-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.event-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+    border: 1px solid #ddd;
+    height: auto;
+    padding: 10px;
+}
+.img-cart{
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 10px;
+    
+}
+.event-card img {
+    
+    width: 300px;
+    height: 380px; /* Increase height for a larger image */
+    object-fit:fill; /* Ensure the image covers the area without shrinking */
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+
+.event-card:hover {
+    transform: scale(1.05);
+}
+.event-card-content {
+    padding: 20px;
+    padding-top: 10px; /* Top padding adjustment to bring content closer to image */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align all content to the left */
+}
+
+.event-card-title {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: bold;
+    text-align: center; /* Center the title */
+    width: 100%; /* Ensure title takes full width for centering */
+}
+
+.event-card-details {
+    font-size: 1em;
+    margin-bottom: 10px;
+    color: #666;
+    text-align: left; /* Align details to the left */
+}
+
+.event-card-price {
+    font-size: 1.2em;
+    color: #000;
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: left; /* Align price to the left */
+}
+
+.event-card-availability {
+    font-size: 1em;
+    color: #f00;
+    text-align: left; /* Align availability to the left */
+}
+
+.book-now-btn {
+    background-color: rgb(234, 57, 13);
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1em;
+    display: inline-block;
+    width: 150px;
+    margin-top: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s, color 0.3s;
+    border: 3px solid rgb(234, 57, 13);
+    align-self: center; /* Center the button horizontally */
+}
+
+.book-now-btn:hover {
+    background-color: whitesmoke;
+    border: 2px solid rgb(234, 57, 13);
+    color: rgb(234, 57, 13);
+    text-decoration: none;
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .events-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .events-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+

@@ -1,0 +1,43 @@
+main {
+  padding: 2em 1em;
+  max-width: 1300px;
+  margin: 2em auto;
+  background-color: whitesmoke; /* Set the background color to whitesmoke */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px; /* Optional: Add rounded corners */
+}
+.container9 {
+  width: 90%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0 auto;
+ 
+}
+img {
+  max-width: 100%;
+  max-height: 100%;
+  cursor: pointer;
+  margin-top: 35px;
+}
+
+.map {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 100vh;
+  border-radius: 12px; /* Add rounded corners to the map container */
+  overflow: hidden; /* Ensures content stays within the rounded corners */
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,338 @@
+/* Reset all margin and padding to remove any unintended space */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+
+
+.container {
+  width: 100%;
+  height: 100px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0 auto;
+}
+
+
+
+ul {
+  display: flex;
+  justify-content: center; /* Center the list items */
+  align-items: center;
+}
+
+ul li {
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 70px;
+  list-style-type: none;
+}
+
+
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+li:hover {
+  transition: all 0.5s ease-in;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.content {
+  text-align: end;
+  position: relative;
+  z-index: 2;
+}
+
+.content h2 {
+  margin-top: 400px;
+  font-size: 50px;
+  color: white;
+  font-weight: 600;
+  transition: 0.5s;
+}
+
+.content h2:hover {
+  -webkit-text-stroke: 2px white;
+  color: transparent;
+}
+
+.content a {
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  font-size: 24px;
+  border: 2px solid white;
+  padding: 14px 70px;
+  border-radius: 50px;
+  margin-top: 20px;
+}
+
+
+
+
+.footerContainer {
+  width: 100%;
+  padding: 70px 30px 20px;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+}
+
+.socialIcons a {
+  text-decoration: none;
+  padding: 10px;
+  background-color: rgba(124, 197, 41, 0.6);
+  margin: 10px;
+  border-radius: 50%;
+}
+
+.socialIcons a i {
+  font-size: 2em;
+  color: black;
+  opacity: 0.9;
+}
+
+/* Hover effects on social media icons */
+.socialIcons a:hover {
+  background-color: rgb(234, 57, 13);
+  transition: 0.5s;
+}
+
+.socialIcons a:hover i {
+  color: gray;
+  transition: 0.5s;
+}
+
+.footerNav {
+  margin: 3px 0;
+}
+
+.footerNav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.footerNav ul li a {
+  color: black;
+  margin: auto;
+  text-decoration: none;
+  font-size: 1em;
+  opacity: 0.7;
+  transition: 0.5s;
+}
+
+.footerNav ul li a:hover {
+  opacity: 0.1;
+}
+
+.footerBottom {
+  background-color: whitesmoke;
+  padding: 20px;
+  text-align: center;
+}
+
+.footerBottom p {
+  color: green;
+}
+
+.designer {
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  margin: 0px 5px;
+}
+
+@media (max-width: 700px) {
+  .footerNav ul {
+    flex-direction: column;
+  }
+  .footerNav ul li {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+.nav-btn1 {
+  background-color: rgb(234, 57, 13);
+  color: white;
+  text-decoration: none;
+  padding: 0.7em 1.5em;
+  transition: background-color 0.3s, transform 0.3s, color 0.3s;
+  font-weight: bold;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  display: inline-block;
+  border: 3px solid rgb(234, 57, 13);
+  
+}
+
+.nav-btn1:hover {
+  background-color: white;
+  border: 2px solid rgb(234, 57, 13);
+  color: rgb(234, 57, 13);
+  transform: scale(1.1);
+}
+
+
+
+a.nav-btn1, a.nav-btn {
+  padding: 0.7em 1.5em; /* Default for all buttons */
+}
+
+a.nav-btn1:contains("Membership"), a.nav-btn:contains("Membership") {
+  padding: 0.3em 0.8em;
+  font-size: 0.8rem;
+}
+
+
+.dropdownmenu ul,.dropdownmenu li{
+  margin: 0;
+  padding: 0;
+}
+.dropdownmenu ul{
+  background:white;
+  list-style:none ;
+  
+  
+}
+.dropdownmenu li{
+  float:left;
+  position:relative ;
+
+
+}
+.dropdownmenu a{
+ 
+ 
+  display:flex ;
+  font-weight:400;
+  font-size: 0.9rem;
+  font-family: verdana, sans-serif;
+  padding: 15px 50px;
+  text-align: center;
+  text-decoration:none ;
+  transition: all 0.25s ease;
+
+}
+
+
+#submenu{
+  left: 0;
+  opacity:0;
+  position: absolute;
+  top: 35px;
+  visibility: hidden;
+  z-index:1;
+  display: block;
+ 
+}
+li:hover ul#submenu{
+  opacity :1;
+  top: 80px;
+  visibility: visible;
+ 
+}
+#submenu li{
+  float: none;
+  width: 100%;
+}
+#submenu a:hover{
+
+width: 150px;
+}
+#submenu a{
+
+  width: 150px;
+  height: 70px;
+}
+
+
+
+.logo img {
+  margin: 0 auto;
+  width: 250px;
+  height: 100px;
+  position: absolute;
+  top: 10px; /* Ensure the logo is at the very top */
+  margin-right: 15px;
+}
+
+
+nav {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding-left: 70px;
+  margin-bottom: -230px; /* Brings the main content closer */
+  padding-bottom: 0; /* Ensure no bottom padding */
+}
+
+
+.navbar-links {
+  display: flex;
+  justify-content: center; /* Center the navbar items */
+  position: relative;
+  z-index: 100;
+  margin-left: 320px;
+  margin-right: auto;
+  margin-top: -510px; /* Move the navbar links closer to the logo */
+}
+
+
+.nav-btn{
+background-color: white;
+color: rgb(234, 57, 13);
+text-decoration: none;
+padding: 2em 3em; /* Increase padding to make the buttons larger */
+transition: background-color 0.3s, transform 0.3s, color 0.3s;
+font-weight: bold;
+font-size: 1.2rem; /* Increase font size */
+border: 2px solid transparent;
+border-radius: 8px; /* Optional: increase border-radius for a smoother look */
+display: inline-block;
+border: 3px solid whitesmoke;
+}
+
+.nav-btn:hover {
+background-color: whitesmoke;
+border: 2px solid rgba(255, 255, 255, 0.144);
+color: rgb(234, 57, 13);
+transform: scale(1.1);
+}
+footer {
+background-color: whitesmoke;
+width: 100%;
+margin-top: -45px;
+margin-right: 5px;
+}
+
+      

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoo Parc</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Link to New CSS -->
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/Events.css">
+    <link rel="stylesheet" href="style/scroll up music.css">
+    <link rel="stylesheet" href="style/ticket-btn.css">
+    <link rel="stylesheet" href="style/map-btn.css">
+    <link rel="stylesheet" href="style/loader.css">
+    <script src="js/loader.js" defer></script>
+    <script src="js/audio.js" defer></script>
+    <script src="js/upbtn.js" defer></script>
+    
+    <script>document.addEventListener('DOMContentLoaded', function() {
+        let slideIndex = 0;
+        let slides = document.querySelectorAll('.slide');
+        
+        function showSlides() {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = 'block';
+            setTimeout(showSlides, 5000); // Change image every 5 seconds
+        }
+        
+        function plusMainSlides(n) {
+            showSlidesManually(slideIndex += n);
+        }
+        
+        function showSlidesManually(n) {
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+            slides[slideIndex - 1].style.display = 'block';
+        }
+        
+        document.querySelector('.prev').addEventListener('click', function() {
+            plusMainSlides(-1);
+        });
+        
+        document.querySelector('.next').addEventListener('click', function() {
+            plusMainSlides(1);
+        });
+        
+        // Initial call to start the slideshow
+        showSlides();
+    });
+    </script>
+
+
+  <style>
+      /* Import desired fonts from Google Fonts */
+      @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Bree+Serif&family=Lobster&display=swap');
+  
+      @keyframes blink {
+          0% {
+              opacity: 1;
+          }
+          50% {
+              opacity: 0;
+          }
+          100% {
+              opacity: 1;
+          }
+      }
+  
+      h1 {
+          font-size: 70px !important; /* Force the font size to apply */
+          color: #ffcc00;
+          text-align: center; 
+          font-family: 'Pacifico', 'Lobster', 'Bree Serif', 'Arial', sans-serif; /* Multiple fonts for fallback */
+          margin-top: 1px;
+          padding: 1px; 
+          border-radius: 1px; 
+          display: inline-block; 
+          text-shadow: 
+              0 0 1px #000000, 
+              0 0 10px #fffef9, 
+              0 0 20px #ECDFCC, 
+              0 0 30px #ffffff, 
+              0 0 40px #ECDFCC, 
+              0 0 50px #ffffff;
+          animation: blink 0.09s infinite; /* Adjusted animation for a smoother effect */
+      }
+      .slider {
+        position: relative;
+        width: 90%;
+        max-width: 100%; /* Make the slider fully responsive */
+        height:700px ;
+        max-height: auto; /* Auto height to maintain aspect ratio */
+        margin: auto;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        padding-top: 0;
+        border-radius: 10px;
+        margin-top: 10px;
+      }
+      
+/* Check for specific slide adjustments and override them */
+.slide:nth-child(1) .slide-content {
+  height: 150px; /* Apply the same height for slides 3 and 4 */
+  padding: 20px; /* Ensure padding is consistent */
+}
+/* Check for specific slide adjustments and override them */
+
+.slide:nth-child(2) .slide-content {
+  height: 150px; /* Apply the same height for slides 3 and 4 */
+  padding-top: 20px; /* Ensure padding is consistent */
+}
+
+/* Check for specific slide adjustments and override them */
+.slide:nth-child(3) .slide-content {
+  height: 180px; /* Apply the same height for slides 3 and 4 */
+  padding: 60px; /* Ensure padding is consistent */
+}
+/* Check for specific slide adjustments and override them */
+
+.slide:nth-child(4) .slide-content {
+  height: 180px; /* Apply the same height for slides 3 and 4 */
+  padding: 10px; /* Ensure padding is consistent */
+}
+  </style>
+  
+
+</head>
+<body style="background-color: white";>
+
+    <header>
+        <div class="header-container">
+                <a href="index.html" class="logo">
+                    <img src="img/logo.png" alt="Zoo Parc Logo">
+                </a>
+                <div class="title-nav">
+                    <h1>Zoo Parc
+                    </h1>
+                    <nav>
+                        <ul>
+                        <li><a href="index.html">Home</a></li>    
+                        <li><a href="AboutUs.html">About Us</a></li>
+                            <li>
+                                <div class="nav-item home-item">
+                                    <a href="Events.html" class="home-button"style="color: #ffcc00;">Events</a>
+                                    <div class="animal-animation">
+                                        <img src="img/lion.gif" class="animal" alt="lion Animation">
+                                    </div>
+                                </div>
+                            </li>
+                        <li><a href="Gallery.html">Gallery</a></li>
+                        <li><a href="FoodOutlets.html">Dining</a></li>
+                        <li><a href="Login.html">Login</a></li>
+                        </ul>
+                    </nav>
+                </div>
+        </div>
+    </header>
+<div id="loader">
+    <img src="img/logo.png" alt="Zoo Parc Logo">
+    <p>Loading, please wait...</p>
+</div>
+
+
+    <main style="background-color: whitesmoke;">  
+    <h2 style="size: 30px;">Upcoming events</h2>
+    <div class="container7">
+
+    
+        <div class="card-container">
+            
+            <div class="card">
+               <img src="img/poster1.jpg">
+
+                <h3>Gecko Encounter </h3>
+    
+                <p>Explore the intriguing behaviors and vibrant colors of geckos at this special exhibit. 
+                    Discover these fascinating reptiles up close and learn about their habitats, conservation status,
+                     and the importance of protecting these small but vital creatures.</p>
+                   
+               </div>
+            
+
+           
+    
+            <div class="card">
+                <img src="img/poster7.jpg">
+                
+                 <h3>Sunset Safari at the Zoo</h3>
+     
+                 <p>Wander through the zoo at dusk and witness the animals in a calm and captivating evening setting. 
+                    Enjoy guided tours that highlight the zoo's wildlife and conservation efforts as the sun sets over the landscape.</p>
+                     
+                </div>
+             
+    
+       <div class="card">
+               <img src="img/poster3.jpg">
+               
+                <h3>Pete the Monkey Festival </h3>
+    
+                <p> A vibrant festival featuring live music, performances, workshops, and other 
+                    fun activities, set in a lively jungle-themed atmosphere.</p>
+                    
+               </div>
+               <div class="slider main-slider">
+                <div class="slides">
+                    <div class="slide">
+                        <img src="img/Event1.jpg" alt="Slide 1">
+                        <div class="slide-content">
+                            <h2>Zoo Parc</h2>
+                            
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="img/Event2.jpg" alt="Slide 2">
+                        <div class="slide-content">
+                            <h2>Zoo Parc</h2>
+                            
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="img/Event3.jpg" alt="Slide 3">
+                        <div class="slide-content">
+                            <h2>Zoo Parc</h2>
+                            
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="img/Event4.jpg" alt="Slide 4">
+                        <div class="slide-content">
+                            <h2>Zoo Parc</h2>
+                            
+                        </div>
+                    </div>
+                </div>
+                <a class="prev" onclick="plusMainSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusMainSlides(1)">&#10095;</a>
+            </div>
+    
+    
+            <div class="card">
+                <img src="img/poster5.jpg">
+                
+                 <h3>Joya: Feast of the Senses</h3>
+     
+                 <p>An immersive experience combining theatrical performances and culinary delights, celebrating the wonders of the natural world.
+                     Enjoy a magical journey that blends art, nature, and cuisine in a unique and intimate setting.</p>
+                     
+                </div>
+             
+       
+             <div class="card">
+                <img src="img/poster2.jpg">
+            
+                 <h3>Let Nature Be Your Guide</h3>
+     
+                 <p>Connect with native animals like koalas and explore the natural beauty of Cleland Wildlife Park. 
+                    Enjoy a serene setting while learning about wildlife and conservation.</p>
+                    
+                </div>
+             
+    
+             <div class="card">
+                <img src="img/poster8.jpg">
+            
+                 <h3>Day at the Zoo</h3>
+     
+                 <p>Enjoy a family-friendly day at the zoo with free admission and engaging activities like animal encounters, educational sessions, and fun games.
+                     Perfect for all ages, this event promotes wildlife awareness and conservation.</p>
+                    
+                </div>
+            
+    </div>
+
+    
+</main> 
+
+
+    
+</body>
+
+
+ <!-- Enhanced Footer -->
+ <footer
+  class="footer">
+    <div class="footer-content">
+        
+        </div>
+        <div class="footer-section links">
+            
+        </div>
+    </div>
+    <br>
+    <div class="footer-bottom">
+      <div class="footer-section about">
+        <div class="social-icons">
+            <p class="footer-head"><i class="fas fa-leaf icon"></i>
+                Zoo Parc - The Zoological Park
+          <i class="fas fa-paw icon"></i> <br></p>
+          <p>Together, we CAN make a difference! If you'd like to help our wildlife charity,
+             there are lots of ways you can do so... THANK YOU for your ongoing SUPPORT.</p>           
+      
+    <p>Zoo Parc is home to over 31,000 animals across 128 acres of lush gardens.
+         Come explore and learn about wildlife and conservation efforts.</p> <br>
+         <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-google-plus"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <p> &copy; 2024 Zoo Parc - The Zoological Park | 
+            Designed by<a href="https://www.instagram.com/luna.layl_/" class="btn-su" 
+            target="_blank" >Sumalka Kodithuwakku<i class="fab fa-pagelines icon-lv" id="icon-lv"></i></a></p>
+        
+            
+
+
+        </div>
+        
+        </div> 
+    </div>
+    <div class="quick-links">
+        <p> Quick - Links  
+          <a href="index.html" class="quick-link-btn">Home</a>|
+          <a href="AboutUs.html" class="quick-link-btn">About Us</a>|
+          <a href="Gallery.html" class="quick-link-btn">Gallery</a>|
+          <a href="registration.php" class="quick-link-btn">Register</a>|
+          <a href="forgot_password.php" class="quick-link-btn">Reset-Password</a> </p>
+      </div>
+            
+</footer>
+
+
+          <!-- Scroll to Top Button -->
+<div class="scroll-to-top" id="scrollToTop">
+  <a href="#top" class="scroll-btn">
+      <i class="fas fa-chevron-up"></i>
+  </a>
+</div>
+      <!-- Floating Audio Control -->
+<div id="audio-control">
+  <button id="musicPlaying">&#9654;</button> <!-- Play Icon -->
+  <audio id="background-music" loop>
+      <source src="images/mp3.mp3" type="audio/mpeg">
+      browser not support the audio
+  </audio>
+</div>
+     <!-- Floating ticket Button -->
+     <div class="floating-cart">
+        <a href="Tickets.html" class="cart-btn">
+            <img src="img/ticket-icon.png" alt="Buy Ticket">
+        </a>
+
+        <!-- Floating Map Button -->
+     <div class="floating-map">
+        <a href="ZooMap.html" class="map-btn">
+            <img src="img/map.gif" alt="Zoo Map">
+        </a>
+
+</html>

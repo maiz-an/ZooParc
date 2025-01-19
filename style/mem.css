@@ -1,0 +1,9 @@
+main {
+    padding: 2em 1em;
+    max-width: 1300px;
+    height: auto;
+    margin: 20px auto; /* Increase top margin to move it down */
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }

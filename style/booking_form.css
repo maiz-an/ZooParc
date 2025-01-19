@@ -1,0 +1,73 @@
+
+main {
+    padding: 2em 1em;
+    max-width: 700px;
+    margin: 2em auto;
+    background-color: whitesmoke;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    /* Remove fixed height to allow auto-adjustment */
+    /* height: 1600px; */ 
+}
+        .booking-container h2 {
+    color: rgb(234, 57, 13);
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 35px;
+}
+.booking-container p {
+    margin-bottom: 15px; /* Adds space between each line */
+    font-size: 16px; /* Optional: Adjust the font size if needed */
+    color: #333; /* Optional: Ensure text color is consistent */
+    margin-left: 10px;
+}
+
+
+        .booking-container form {
+            display: flex;
+            flex-direction: column;
+            width:500px;
+        }
+        .booking-container label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+            margin-left: 10px;
+        }
+        .booking-container input[type="number"]
+        {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+       
+        input[name="quantity"] {
+    width: 200px; /* Adjust the width as needed */
+    padding: 10px; /* Optional: Adds padding inside the input box */
+    margin-top: 10px; /* Optional: Adds space above the input box */
+}
+.booking-container button {
+    background-color: rgb(234, 57, 13);
+            color: white;
+            text-decoration: none;
+            padding: 0.7em 1.5em;
+            transition: background-color 0.3s, transform 0.3s, color 0.3s;
+            font-weight: bold;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            display: inline-block;
+            border: 3px solid rgb(234, 57, 13);
+          margin-left: 10px;
+          width: 630px;
+}
+
+.booking-container button:hover {
+    background-color: whitesmoke;
+            border: 2px solid rgb(234, 57, 13);
+            color: rgb(234, 57, 13);
+          transform: scale(1.1);
+}
+

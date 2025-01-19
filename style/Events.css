@@ -1,0 +1,232 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Montserrat, sans-serif;
+  background: black;
+}
+main {
+  padding: 2em 1em;
+  max-width: 1300px;
+  height: 300vh;
+  margin: 2em auto;
+  background-color: whitesmoke; /* Set the background color to whitesmoke */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+h1{
+  font-size:40px ;
+  color: rgb(234, 57, 13);
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 30px;
+}
+/* Slider Styles */
+.slider {
+  position: relative;
+  width: 90%;
+  max-width: 100%; /* Make the slider fully responsive */
+  height:570px ;
+  max-height: auto; /* Auto height to maintain aspect ratio */
+  margin: auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding-top: 0;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.slides {
+  display: flex;
+  width: 100%;
+  height: auto; /* Auto height for responsive slides */
+  transition: transform 0.5s ease-in-out;
+  border-radius: 15px;
+}
+
+.slide {
+  width: 100%;
+  height: auto; /* Auto height to adapt to image size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  animation: zoomIn 0.7s ease-in-out;
+  border-radius: 15px;
+}
+
+.slide img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover;
+  border-radius: 15px;
+  vertical-align: middle;
+  transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+
+/* Ensure the slide content has the same fixed height across all slides */
+.slide-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px; /* Fixed height for all slide contents */
+  background: rgba(108, 98, 98, 0.6);
+  color: #fff;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 0 0 15px 15px;
+  overflow: hidden;
+}
+
+/* Internal text styling to ensure consistent size */
+.slide-content h2, .slide-content p {
+  margin: 0;
+  padding-top: 15px;
+  font-size: 1em; /* Consistent font size */
+  line-height: 1.2em;
+  max-height: 2.4em; /* Ensure text fits within the set height */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 25px;
+}
+
+
+/* Check for specific slide adjustments and override them */
+.slide:nth-child(3) .slide-content {
+  height: 150px; /* Apply the same height for slides 3 and 4 */
+  padding: 10px; /* Ensure padding is consistent */
+}
+/* Check for specific slide adjustments and override them */
+
+.slide:nth-child(4) .slide-content {
+  height: 180px; /* Apply the same height for slides 3 and 4 */
+  padding: 10px; /* Ensure padding is consistent */
+}
+
+
+/* Navigation Arrows */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: background-color 0.3s ease-in-out;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: translateY(-50%);
+}
+
+.prev {
+  left: 10px;
+  border-radius: 0 3px 3px 0;
+}
+
+.next {
+  right: 10px;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(212, 189, 189, 0.8);
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between; /* Ensures even spacing between cards */
+  flex-wrap: wrap; /* Allows wrapping of cards in smaller screens */
+  gap: 20px; /* Space between cards */
+  margin: 0 auto;
+  padding: 20px;
+  width: 95%;
+}
+
+.card {
+  flex: 1 1 calc(33.33% - 2em); /* Makes each card take up one-third of the container's width */
+  max-width: calc(33.33% - 2em); /* Ensures cards don't exceed one-third of the width */
+  background-color: #ecf0f1;
+  border-radius: 8px;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0; /* Removes additional margin */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+/* Ensure all images have the same size */
+.card img {
+  width: 100%; /* Ensures the image takes up the full width of the card */
+  height: 450px; /* Fixed height to ensure uniformity */
+  object-fit: cover; /* Maintains aspect ratio and covers the entire area */
+  border-radius: 8px;
+  box-shadow: 5 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card h3, .card p {
+  margin-top: 0.5em;
+  font-size: 1.1em;
+  color: #444;
+}
+
+.card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card img:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .card {
+      flex: 1 1 calc(50% - 2em); /* Adjust for tablets */
+      max-width: calc(50% - 2em);
+  }
+}
+
+@media (max-width: 768px) {
+  .card-container {
+      flex-direction: column;
+  }
+  
+  .card {
+      flex: 1 1 100%; /* Full width on smaller screens */
+      max-width: 100%;
+  }
+  
+  .slide-content {
+      padding: 5px; /* Adjust padding for smaller screens */
+  }
+ 
+
+}
+
+@media (max-width: 480px) {
+  .card-container {
+      padding: 10px;
+  }
+
+  .prev, .next {
+      font-size: 14px; /* Smaller icons on mobile */
+      padding: 10px;
+  }
+}
+

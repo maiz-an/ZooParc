@@ -1,0 +1,65 @@
+
+.container-new {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center; /* Centers the image horizontally */
+  align-items: center; /* Centers the image vertically */
+  overflow: hidden; /* Clips the content to the container */
+}
+.content img {
+  width: 1150px; /* Sets the image width */
+  height: 450px; /* Sets the image height */
+  border-radius: 15px; /* Adds rounded corners to the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for better appearance */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for pop-up effect */
+}
+
+.content img:hover {
+  transform: scale(1.02); /* Scales the image slightly (only 2% increase) */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow for a gentle pop-up effect */
+}
+
+
+
+  
+  
+h2 {
+  text-align: center;
+  color: red;
+  margin-bottom: 1em;
+  font-size: 40px;
+  font-weight: bold;
+  padding-top: 60px;
+}
+  
+  main {
+    padding: 2em 1em;
+    max-width: 90%;
+    margin: 2em auto;
+    background-color: whitesmoke;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    height: 930px;
+}
+
+.main1 {
+  padding: 2em 1em;
+  max-width: 800px;
+  height: 50vh;
+  margin: 2em auto;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding-top: 0;
+  margin-top:10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for pop-up effect */
+}
+
+.main1:hover {
+  transform: scale(1.02); /* Scales the main1 section slightly (only 2% increase) */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow for a gentle pop-up effect */
+}
+

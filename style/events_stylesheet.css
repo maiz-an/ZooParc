@@ -1,0 +1,160 @@
+
+
+section#welcome,
+section#highlights,
+section#testimonials,
+section#team,
+section#gallery,
+section#menu,
+section#events,
+section#promotions {
+    padding: 2em;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    margin-bottom: 2em;
+}
+
+section p {
+    font-size: 1.2em;
+    color: #666;
+    text-align: center;
+}
+
+.highlight-item,
+.testimonial-item,
+.team-member,
+.gallery-item,
+.menu-category,
+.event-item,
+.promotion-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5em;
+}
+
+.highlight-item img,
+.testimonial-item img,
+.team-member img,
+.gallery-item img,
+.menu-category img,
+.event-item img,
+.promotion-item img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    box-shadow: 5 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.highlight-item p,
+.testimonial-item p,
+.team-member p,
+.menu-category h3,
+.menu-category p,
+.event-item h3,
+.event-item p,
+.promotion-item h3,
+.promotion-item p {
+    margin-top: 0.5em;
+    font-size: 1.1em;
+    color: #444;
+    text-align: center;
+}
+
+.menu-category,
+.event-item,
+.promotion-item {
+    width: 100%;
+    max-width: 300px;
+    margin: 1em;
+    padding: 1em;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-category a,
+.event-item a,
+.promotion-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.menu-category:hover,
+.event-item:hover,
+.promotion-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu-category img:hover,
+.event-item img:hover,
+.promotion-item img:hover {
+    transform: scale(1.1);
+}
+
+
+/* Flexbox containers for centering items */
+.event-container,
+.promotion-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 0.5em 0;
+    }
+
+    main {
+        padding: 1em;
+    }
+
+    section {
+        padding: 1em;
+    }
+
+    .highlight-item img,
+    .testimonial-item img,
+    .team-member img,
+    .gallery-item img,
+    .menu-category img,
+    .event-item img,
+    .promotion-item img {
+        max-width: 100%;
+    }
+
+    section#menu,
+    section#events,
+    section#promotions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-category,
+    .event-item,
+    .promotion-item {
+        margin: 1em 0;
+    }
+    .special-font {
+        font-family: 'Roboto', sans-serif; 
+        font-size: 2.5em; 
+        color: #333; 
+        background-color: #185b4892; 
+        padding: 0.5em; 
+        border-radius: 8px; 
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+        text-align: center; 
+        display: inline-block; 
+    }
+    
+    
+}
+

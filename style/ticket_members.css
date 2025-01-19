@@ -1,0 +1,51 @@
+
+main {
+    padding: 2em 1em;
+    max-width: 600px;
+    margin: 2em auto;
+    background-color: whitesmoke;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.ticket-form-container h2{
+    text-align: center;
+    margin-bottom: 20px;
+    color:  rgb(234, 57, 13);
+}
+.ticket-form-container form {
+    display: flex;
+    flex-direction: column;
+}
+.ticket-form-container label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+.ticket-form-container input,
+.ticket-form-container select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+}
+.ticket-form-container button {
+    margin-top: 10px;
+  padding: 12px 20px; /* Increase padding for a larger button */
+  width: 100%; /* Set the width to 100% of the form's width */
+  max-width: 628px; /* Optionally, set a maximum width for the button */
+  align-self: center; /* Center align the button within the form */
+  background-color: rgb(234, 57, 13); /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove any default border */
+  border-radius: 4px; /* Add rounded corners */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  text-align: center; /* Center the text inside the button */
+}
+.ticket-form-container button:hover {
+    background-color: whitesmoke;
+    border: 2px solid rgb(234, 57, 13);
+    color: rgb(234, 57, 13);
+    transform: scale(1.1);
+}

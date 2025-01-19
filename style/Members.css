@@ -1,0 +1,482 @@
+.content {
+  text-align: right;
+}
+
+
+
+.content h2:hover {
+  -webkit-text-stroke: 2px white;
+  color: transparent;
+}
+
+.content a {
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  font-size: 24px;
+  border: 2px solid white;
+  padding: 14px 70px;
+  border-radius: 50px;
+}
+
+
+.back-video {
+  position: relative;
+  width: 120%; /* Keeping the width as 120% */
+  height: auto; /* Allow the height to adjust based on the video */
+  overflow: hidden;
+  border-radius: 15px; /* Border radius for the container */
+}
+
+
+
+@media(min-aspect-ratio:16/9) {
+  .back-video {
+    width: 90%;
+    height: auto;
+  }
+}
+
+@media(max-aspect-ratio:16/9) {
+  .back-video {
+    width: auto;
+    height: 90%;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+
+
+
+.main1 {
+  padding: 2em 1em;
+  max-width: 600px;
+  height: 22vh;
+  margin: 2em auto;
+  background-color: whitesmoke;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding-top: 2px;
+}
+
+
+
+
+/* Ensure the video itself fits well within the container */
+.back-video video {
+  width: 100% !important;
+  height: 400px !important;
+  display: block;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* Reduce margin for heading to reduce space above the video */
+.content h2 {
+  margin-top: 20px; /* Reduced significantly */
+  margin-right: 100px;
+  font-size: 82px;
+  color: white;
+  font-weight: 600;
+  transition: 0.5s;
+}
+
+/* Ensure video container doesn't add extra space */
+.container-new {
+  position: relative;
+  width: 100%;
+  height: auto; /* Adjust height dynamically */
+  margin: 0 auto; /* Center the container without adding top margin */
+  padding-top: 0; /* Remove any padding that might push the video down */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Adjust the main tab to move it down */
+main {
+  padding: 2em 1em;
+  max-width: 1300px;
+  height: auto;
+  margin: 20px auto; /* Increase top margin to move it down */
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+section {
+  margin-bottom: 2em;
+}
+
+#welcome {
+  text-align: center;
+}
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1em;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+section#welcome,
+section#events
+ {
+  padding: 2em;
+  background-color: #ecf0f1;
+  border-radius: 8px;
+  margin-bottom: 2em;
+}
+
+section p {
+  font-size: 1.2em;
+  color: #666;
+  text-align: center;
+}
+
+
+.event-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5em;
+}
+
+
+.event-item img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+  box-shadow: 5 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.event-item h3,
+.event-item p {
+  margin-top: 0.5em;
+  font-size: 1.1em;
+  color: #444;
+  text-align: center;
+}
+
+.event-item {
+  width: 100%;
+  max-width: 300px;
+  margin: 1em;
+  padding: 1em;
+  background-color: #ecf0f1;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.event-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.event-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.event-item img:hover{
+  transform: scale(1.1);
+}
+
+
+/* Flexbox containers for centering items */
+.event-container
+ {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  nav ul {
+      flex-direction: column;
+  }
+
+  nav ul li {
+      margin: 0.5em 0;
+  }
+
+  main {
+      padding: 1em;
+  }
+
+  section {
+      padding: 1em;
+  }
+
+  
+ 
+  
+  
+  .event-item img
+  {
+      max-width: 100%;
+  }
+
+ 
+  section#events
+   {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  
+  .event-item
+   {
+      margin: 1em 0;
+  }
+  
+  
+  
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: 500vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0 auto;
+}
+
+nav {
+  background-color: whitesmoke;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.logo img {
+  width: 250px;
+  height: 74px;
+  margin-right: 20px;
+  position: relative; /* Changed from absolute to relative */
+  top: 0; /* Adjusted to align better */
+}
+
+.navbar-links {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px; /* Added gap for spacing between links */
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  margin: 0;
+  padding: 0;
+}
+
+ul li a {
+  padding: 10px 15px; /* Adjusted padding for better spacing */
+  text-decoration: none;
+  color: whitesmoke;
+  display: block;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+ul li a:hover {
+  background-color: whitesmoke;
+}
+
+ul li:not(:last-child) {
+  margin-right: 10px; /* Increased gap between nav items */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+
+
+.dropdownmenu ul,.dropdownmenu li{
+  margin: 0;
+  padding: 0;
+}
+.dropdownmenu ul{
+  background:whitesmoke;
+  list-style:none ;
+  
+  
+}
+.dropdownmenu li{
+  float:left;
+  position:relative ;
+
+
+}
+.dropdownmenu a{
+ 
+
+  display:flex ;
+  font-weight:400;
+  font-size: 0.9rem;
+  font-family: verdana, sans-serif;
+  padding: 15px 50px;
+  text-align: center;
+  text-decoration:none ;
+  transition: all 0.25s ease;
+
+}
+
+
+#submenu{
+  left: 0;
+  opacity:0;
+  position: absolute;
+  top: 35px;
+  visibility: hidden;
+  z-index:1;
+  display: block;
+ 
+}
+li:hover ul#submenu{
+  opacity :1;
+  top: 80px;
+  visibility: visible;
+ 
+}
+
+
+      
+
+*{
+  padding:0 ;
+  margin:0;
+  box-sizing: border-box;
+  
+}
+footer {
+  background-color: whitesmoke;
+  width: 100%;
+  padding: 20px0;
+  margin-top: 10px;
+  text-align: center; /* Center the footer content */
+}
+
+.footerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px; /* Add space between social icons and the rest of the footer */
+}
+
+.socialIcons a {
+  text-decoration: none;
+  padding: 10px;
+  background-color: rgba(124, 197, 41, 0.6);
+  margin: 010px; /* Adjust spacing between icons */border-radius: 50%;
+}
+
+.socialIcons a i {
+  font-size: 2em;
+  color: black;
+  opacity: 0.9;
+}
+
+/* Hover effects on social media icons */.socialIcons a:hover {
+  background-color: rgb(234, 57, 13);
+  transition: 0.5s;
+}
+.socialIcons a:hoveri {
+  color: gray;
+  transition: 0.5s;
+}
+
+.footerNav {
+  margin: 20px0;
+}
+
+.footerNav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.footerNav ul li {
+  margin: 015px;
+}
+
+.footerNav ul li a {
+  color: black;
+  text-decoration: none;
+  font-size: 1em;
+  opacity: 0.7;
+  transition: opacity 0.5s;
+}
+
+.footerNav ul li a:hover {
+  opacity: 1;
+}
+
+.footerBottom {
+  background-color: whitesmoke;
+  padding: 20px;
+  text-align: center;
+}
+
+.footerBottom p {
+  color: red;
+  margin: 0;
+}
+
+.designer {
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  margin: 05px;
+}
+
+@media (max-width: 700px) {
+  .footerNav ul {
+      flex-direction: column;
+  }
+
+  .footerNav ul li {
+      margin-bottom: 10px;
+  }
+}

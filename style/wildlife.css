@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap');
+
+.wildlife-callout {
+    background-color: whitesmoke;
+    color: green;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 30px;
+    position: relative;
+    max-width: 1700px;
+    margin: 20px auto; /* Reduced gap */
+    font-family: 'Baloo 2', cursive;
+    overflow: hidden;
+}
+
+
+.wildlife-text {
+    flex: 2;
+    margin-right: 20px;
+    text-align: left;
+   
+}
+
+.wildlife-text h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: aquamarine;
+}
+
+.wildlife-text p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.wildlife-text strong {
+    font-weight: bold;
+    color: rgb(234, 57, 13);
+    font-size: 30px;
+}
+
+.wildlife-text em {
+    font-style: italic;
+}
+
+
+
+.wildlife-image {
+    flex: 1;
+    position: relative;
+}
+
+.wildlife-image img {
+    border-radius: 50%;
+    border: 5px solid whitesmoke;
+    width: 300px; /* Increased size */
+    height: 350px; /* Increased size */
+    max-height: 400px;
+    object-fit: cover;
+    position: absolute;
+    top: -50px; /* Adjusted to overlap more */
+    right: 20px; /* Adjusted to overlap more */
+    
+}

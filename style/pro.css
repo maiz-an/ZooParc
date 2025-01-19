@@ -1,0 +1,48 @@
+.cart-link {
+    display: block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #403c3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    text-align: center;
+    width: 50px;
+}
+
+
+.cart-link:hover {
+    background-color: #0a9660;
+}
+
+
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 0.5em 0;
+    }
+
+    main {
+        padding: 1em;
+    }
+
+    section {
+        padding: 1em;
+    }
+
+    #recent-activity {
+        flex-direction: column;
+    }
+.searchInput{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 1em;
+}
+
+
+}

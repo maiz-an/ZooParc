@@ -1,0 +1,55 @@
+.body{
+    margin: 0;
+    padding: 0;
+    font-family: montserrat,sans-serif;
+    background: black;
+  }
+  
+  
+  
+    .Animated-texts{
+      color:white;
+      position: absolute ;
+      top: 50%;
+      left: 50%;
+      transform:translate(-50%,-50%);
+      background: green;
+      padding: 0 40px;
+      height: 60px;
+      overflow: hidden;
+    }
+    .line{
+      text-transform:uppercase ;
+      text-align: center;
+      font-size: 40px;
+      line-height:60px ;
+    }
+  .line:first-child{
+      animation: anim 12s infinite;
+  }
+  @keyframes anim {
+    0%{
+      margin-top: 0;
+    }
+    16%{
+      margin-top: -60px;
+    }
+    33%{
+      margin-top:-120px;
+    }
+    50%{
+      margin-top: -180px;
+    }
+    66%{
+      margin-top: -120px;
+    }
+    82%{
+      margin-top: -60px;
+    }
+    100%{
+      margin-top: 0;
+    }
+  }
+  
+  
+  

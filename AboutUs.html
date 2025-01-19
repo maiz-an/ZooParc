@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/AboutUs.css">
+    <link rel="stylesheet" href="style/wildlife.css">
+    <link rel="stylesheet" href="style/3aboutus.css">
+    <link rel="stylesheet" href="style/map-btn.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Link to New CSS -->
+    <link rel="stylesheet" href="style/scroll up music.css">
+    <link rel="stylesheet" href="style/ticket-btn.css">
+    <link rel="stylesheet" href="style/loader.css">
+    <script src="js/loader.js" defer></script>
+    <script src="js/audio.js" defer></script>
+    <script src="js/upbtn.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoo Page</title>
+    <style>
+    
+      /* Import desired fonts from Google Fonts */
+      @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Bree+Serif&family=Lobster&display=swap');
+  
+      @keyframes blink {
+          0% {
+              opacity: 1;
+          }
+          50% {
+              opacity: 0;
+          }
+          100% {
+              opacity: 1;
+          }
+      }
+  
+      h1 {
+          font-size: 70px !important; /* Force the font size to apply */
+          color: #ffcc00;
+          text-align: center; 
+          font-family: 'Pacifico', 'Lobster', 'Bree Serif', 'Arial', sans-serif; /* Multiple fonts for fallback */
+          margin-top: 1px;
+          padding: 1px; 
+          border-radius: 1px; 
+          display: inline-block; 
+          text-shadow: 
+              0 0 1px #000000, 
+              0 0 10px #fffef9, 
+              0 0 20px #ECDFCC, 
+              0 0 30px #ffffff, 
+              0 0 40px #ECDFCC, 
+              0 0 50px #ffffff;
+          animation: blink 0.09s infinite; /* Adjusted animation for a smoother effect */
+      }
+
+  
+
+.hero-container {
+    margin-top: 0; /* Ensure there's no top margin */
+    padding-top: 0; /* Ensure there's no top padding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Adjusted height for centering */
+    background-color: whitesmoke; /* Adjusted background color */
+    
+}
+
+.hero-image {
+    position: relative;
+    width: 90%;
+    max-width: 1100px; /* Fixed width for the image */
+    background-image: url('img/image1.jpg'); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 560px; /* Fixed height for the image */
+    max-height: 900px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-right: 10px;
+    border-radius: 20px; /* Rounded corners */
+    transition: transform 0.3s ease-in-out; /* Smooth transform effect */
+    margin-left: 170px;
+    margin-top: 50px;
+}
+
+.hero-image:hover {
+    transform: scale(1.03); /* Slightly enlarge the image on hover */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Add shadow effect on hover */
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 38px; /* Align text to the left */
+    transform: translateY(-50%) rotate(-5deg); /* Angle the text slightly */
+    color: white; /* Yellow color similar to your example */
+    text-align: left; /* Align text to the left */
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-text h2 {
+    font-size: 3rem; /* Reduced font size */
+    font-weight: bold;
+    position: relative;
+}
+
+.hero-text  .icons
+{
+    font-size: 0.8em;
+            vertical-align: middle;
+            margin: 0 10px;
+            color: #ffd700;
+}
+
+
+
+.hero-text p {
+    font-size: 1rem; /* Reduced font size */
+    margin-top: 10px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .hero-image {
+        width: 80%;
+        height: 300px; /* Adjusted height for smaller screens */
+    }
+
+    .hero-text h2 {
+        font-size: 2rem;
+    }
+
+    .hero-text p {
+        font-size: 0.8rem;
+    }
+
+    .hero-text h2 .icon
+    {
+        font-size: 1.5rem;
+        left: -1.5rem;
+        right: -1.5rem;
+    }
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5dc;
+    margin: 0;
+    padding: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Adjusted to fit different sizes */
+    gap: 10px; /* Space between items */
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.grid-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; /* Needed for text positioning */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for the pop-up effect */
+}
+
+.grid-item:hover {
+    transform: scale(1.05); /* Slightly enlarge the box on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance the shadow to give a popping effect */
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire grid item without distortion */
+    display: block;
+    border-radius: 10px;
+}
+
+.grid-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity */
+}
+
+.grid-item:hover .grid-text {
+    opacity: 1; /* Text becomes visible on hover */
+}
+
+.grid-text h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.grid-text p {
+    margin: 5px 0 0;
+    font-size: 0.9em;
+}
+
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+body {
+    font-family: 'Comic Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.section-container {
+    background-color: #007044; /* Background color similar to the green in your screenshot */
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.title-with-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Space between the icons and text */
+}
+
+.title-with-icons h2 {
+    font-size: 2em;
+    font-family: 'Permanent Marker', cursive;
+    font-weight: bold;
+    margin: 0;
+}
+
+.icon {
+    font-size: 2.5em; /* Size of the icons */
+    color: #ffd700; /* Color similar to the screenshot (golden/yellow) */
+}
+
+.section-container p {
+    font-size: 1.2em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: 'Comic Neue', cursive;
+}
+
+.section-container h2 {
+    font-size: 1.5em;
+    margin-top: 0;
+    font-style: italic;
+    font-family: 'Comic Neue', cursive;
+}
+
+
+.wildlife-image img {
+    border-radius: 50%;
+    border: 5px solid white;
+    width: 480px; /* Increased size */
+    height: 380px; /* Increased size */
+    object-fit: cover;
+    position: absolute;
+    margin-bottom: 50px;
+    right: 20px; /* Adjusted to overlap more */
+
+
+    
+}
+.wildlife-text strong .h2{
+    font-weight: bold;
+    color: rgb(234, 57, 13);
+    font-size: 35px;
+}
+.wildlife-text h2{
+    font-weight: bold;
+    color: rgb(234, 212, 13);
+    font-size: 30px;
+}
+
+  </style>
+   
+    
+</head>
+
+<body>
+
+    <header>
+  
+  </div>
+      <div class="header-container">
+          <a href="index.html" class="logo">
+              <img src="img/logo.png" alt="Zoo Parc Logo">
+          </a>
+          <div class="title-nav">
+              <h1>Zoo Parc
+              </h1>
+              <nav>
+                  <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li>
+                        <div class="nav-item home-item">
+                            <a href="AboutUs.html" class="home-button"style="color: #ffcc00;">About Us</a>
+                            <div class="animal-animation">
+                                <img src="img/lion.gif" class="animal" alt="lion Animation">
+                            </div>
+                        </div>
+                    </li>                   
+                    <li><a href="Events.html">Events</a></li>
+                    <li><a href="Gallery.html">Gallery</a></li>
+                    <li><a href="FoodOutlets.html">Dining</a></li>
+                    <li><a href="Login.html">Login</a></li>
+                  </ul>
+              </nav>
+          </div>
+      </div>
+  </header>
+  <div id="loader">
+    <img src="img/logo.png" alt="Zoo Parc Logo">
+    <p>Loading, please wait...</p>
+</div>
+     <section>
+      
+            <section class="hero-image">
+                <div class="hero-text">
+                    <h2>
+                        <i class="fas fa-paw icons"></i>
+                        OUR ZOO
+                        <i class="fas fa-paw icons"></i>
+                    </h2>
+                    <p>There are over <strong>31,000</strong> animals and<br> <strong>128 acres</strong> of zoological gardens <br>to <strong>EXPLORE</strong></p>
+                </div>
+            
+        </div>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+        </section>
+    </section>
+
+        
+    <section class="wildlife-callout">
+        <div class="wildlife-text">
+            <h2>Welcome to <strong>ZooParc Zoological Park</strong></h2>
+            <p><strong>ZooParc Zoological Park, </strong>   tucked away in <strong> 70 hectares </strong>  of <strong>everdant surroundings,</strong> is a<strong> wildlife enthusiast's</strong>and<strong> adventurer's dream come true.</strong> <em></p>
+            <p><strong>Encountering the wonders  </strong>of the <strong>  animal realm </strong>is an<strong> engaging experience</strong>available at our park, which is home to over  <strong>2,000 animals </strong>representing<strong>200 different species. </strong></em></p>
+            <p>Each step you take in our park brings you <br> <strong>closer to nature, </strong>  from the
+                <br> <strong>captivating giant pandas</strong>and<strong>stately Asian elephants  </strong> to the <strong>colorful poison frogs </strong>and<strong>breathtaking bald eagles.</strong><em></p>
+               
+
+
+                            <p>At <strong>ZooParc,</strong>  we're not simply a zoo; we're a  <strong>community</strong>  committed to <strong>educating people</strong> and<strong>protecting wildlife.</strong> <em></p>
+                                <p>Our goal is to<strong>inspire the next generation </strong> of <strong>wildlife warriors</strong> while<strong>safeguarding endangered species </strong> and their<strong>ecosystems.</strong></em></p>
+                                <p>One visit at a time, we are dedicated to<br> <strong>changing the world</strong> with the help of our 
+                                    <br> <strong>enthusiastic team</strong>of employees,<strong>volunteers, </strong> and<strong>community members.</strong><em></p>
+                                   
+       
+    </section>
+
+    <section class="grid-container">
+        <div class="grid-item" style="grid-column: span 2; grid-row: span 2;">
+            <img src="img/Elephant.jpg" alt="Giraffe">
+            <div class="grid-text">
+                <h3>Elephant Encounter</h3>
+                <p>Meet our majestic Asian elephants and experience their gentle nature and strong social bonds up close at ZooParc.</p>
+            </div>
+        </div>
+        
+       
+        <div class="grid-item" style="grid-column: span 1; grid-row: span 2;">
+            <img src="img/Wild Deer3.jpg" alt="Gorilla">
+        </div>
+        <div class="grid-item" style="grid-column: span 2; grid-row: span 1;">
+            <img src="img/bear2.jpg" alt="Couple with Python">
+            
+            </div>
+           
+        
+        <div class="grid-item" style="grid-column: span 2; grid-row: span 2;">
+            <img src="img/sloth1.jpg" alt="Giraffe">
+            <div class="grid-text">
+                <h3>Sloth Encounter</h3>
+                <p>Slow down and meet our charming sloths, relaxing high up in the trees at ZooParc.</p>
+            </div>
+        </div>
+        
+        
+       
+        <div class="grid-item" style="grid-column: span 1; grid-row: span 2;">
+            <img src="img/Poisonous Frog.jpg" alt="Gorilla">
+        </div>
+        <div class="grid-item" style="grid-column: span 1; grid-row: span 2;">
+            <img src="img/Orangutan.jpg" alt="Gorilla">
+        </div>
+        <div class="grid-item" style="grid-column: span 1; grid-row: span 2;">
+            <img src="img/Bald Eagle.jpg" alt="Gorilla">
+        </div>
+       
+        <div class="grid-item" style="grid-column: span 2; grid-row: span 2;">
+            <img src="img/Giant Panda.jpg" alt="Giraffe">
+            <div class="grid-text">
+                <h3>Giant Panda Encounter</h3>
+                <p>Come see our adorable giant pandas as they munch on bamboo and showcase their playful charm at ZooParc.</p>
+            </div>
+        </div>
+        
+        <div class="grid-item" style="grid-column: span 1; grid-row: span 2;">
+            <img src="img/White Lion.jpg" alt="Giraffe">
+         </div>
+        
+    </section>
+
+     
+</body>
+
+ <!-- Enhanced Footer -->
+ <footer
+  class="footer">
+    <div class="footer-content">
+        
+        </div>
+        <div class="footer-section links">
+            
+        </div>
+    </div>
+    <br>
+    <div class="footer-bottom">
+      <div class="footer-section about">
+        <div class="social-icons">
+            <p class="footer-head"><i class="fas fa-leaf icon"></i>
+                Zoo Parc - The Zoological Park
+          <i class="fas fa-paw icon"></i> <br></p>
+          <p>Together, we CAN make a difference! If you'd like to help our wildlife charity,
+             there are lots of ways you can do so... THANK YOU for your ongoing SUPPORT.</p>           
+      
+    <p>Zoo Parc is home to over 31,000 animals across 128 acres of lush gardens.
+         Come explore and learn about wildlife and conservation efforts.</p> <br>
+         <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-google-plus"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <p> &copy; 2024 Zoo Parc - The Zoological Park | 
+            Designed by<a href="https://www.instagram.com/luna.layl_/" class="btn-su" 
+            target="_blank" >Sumalka Kodithuwakku <i class="fab fa-pagelines icon-lv" id="icon-lv"></i></a></p>
+        
+            
+
+
+        </div>
+        
+        </div> 
+    </div>
+    <div class="quick-links">
+        <p> Quick - Links  
+          <a href="index.html" class="quick-link-btn">Home</a>|
+          <a href="AboutUs.html" class="quick-link-btn">About Us</a>|
+          <a href="Gallery.html" class="quick-link-btn">Gallery</a>|
+          <a href="registration.php" class="quick-link-btn">Register</a>|
+          <a href="forgot_password.php" class="quick-link-btn">Reset-Password</a> </p>
+      </div>
+            
+</footer>
+        <!-- Scroll to Top Button -->
+<div class="scroll-to-top" id="scrollToTop">
+<a href="#top" class="scroll-btn">
+    <i class="fas fa-chevron-up"></i>
+</a>
+</div>
+    <!-- Floating Audio Control -->
+<div id="audio-control">
+<button id="musicPlaying">&#9654;</button> <!-- Play Icon -->
+<audio id="background-music" loop>
+    <source src="images/mp3.mp3" type="audio/mpeg">
+    browser not support the audio
+</audio>
+</div>
+   <!-- Floating ticket Button -->
+   <div class="floating-cart">
+      <a href="Tickets.html" class="cart-btn">
+          <img src="img/ticket-icon.png" alt="Buy Ticket">
+      </a>
+
+
+    <!-- Floating Map Button -->
+    <div class="floating-map">
+        <a href="ZooMap.html" class="map-btn">
+            <img src="img/map.gif" alt="Zoo Map">
+        </a>
+
+</html>
+
